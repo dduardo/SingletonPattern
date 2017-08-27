@@ -7,11 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MyManager.h"
+
+// Constants
+NSString *const KManagerProperty = @"some property to initiate";
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+        
+        MyManager *sharedManager = [MyManager sharedManager:KManagerProperty];
+        NSLog(@"sharedManager: %@",sharedManager.property);
+        
     }
     return 0;
 }
